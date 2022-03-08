@@ -1,0 +1,32 @@
+.img{
+    margin-top: 80px;
+    margin-left: 600px;
+}
+.font{
+    font-family: serif;
+    margin-left: 150px;
+    margin-right: 600px;
+    margin-top: 50px;
+    font-weight: 100;
+    text-align: justify;
+}
+.name{
+    width: 700px;
+  height: 100px;
+  background: transparent;
+  position: absolute;
+  animation: mymove 10s infinite;
+  color: black;
+   font-size: 200%;
+   margin-left: 200px;
+   margin-top: 70px;
+   font-family: source-sans-pro;
+   font-family: var(--font-f-base);
+   font-weight: 400;
+   font-weight: var(--font-w-book);
+   font-style: normal;
+   color: #504e4c;}
+@keyframes mymove {
+    0%   {top: 50px; background:transparent; width: 100px;}
+    100% {top: 300px; background:transparent; width: 700px;}
+  }

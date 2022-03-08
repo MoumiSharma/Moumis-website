@@ -1,0 +1,68 @@
+.container1{
+    background-color: rgb(71, 69, 69);
+    
+}
+.A{
+    color: beige;
+}
+.B{
+    color: beige;
+}
+.C{
+    color: beige;
+}
+.D{
+    color: beige;
+}
+.card-body{
+    background: rgb(71, 69, 69);
+    margin-left: 170px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+}
+.cardbody1{
+    background-color: rgb(71, 69, 69);
+    margin-left: 60px;
+    margin-right: 80px;
+    margin-top: 80px;
+}
+.E{
+    color: beige;
+   
+}
+.F{
+    color: beige;
+}
+.G{
+    color: beige;
+   
+}
+.card2{
+    background-color: rgb(71, 69, 69);
+}
+.card1{
+    background-color: rgb(71, 69, 69);
+}
+.name1{
+    width: 500px;
+}
+.email{
+    width: 500px;
+}
+.message{
+    width: 500px;
+    height: 150px;
+}
+.submit{
+    width: 300px;
+    background-color: transparent;
+    color: beige;
+}
+.line{
+   letter-spacing: 0%;
+    
+}
+.H{
+    letter-spacing: 20px;
+    color: white;
+}

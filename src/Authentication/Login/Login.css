@@ -1,0 +1,32 @@
+.img1{
+    
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.login{
+    margin-top: 120px;
+    height:400px
+}
+.font1{
+    font-family: 'PT Sans', sans-serif;
+    font-size: xx-large;
+    color: white;
+}
+.mail{
+    width: 250px;
+}
+.password{
+    width: 250px;
+}
+.btn{
+    width: 250px;
+  }
+  .bgnd{
+    background-image: linear-gradient(rgb(71, 69, 69), #131314);
+    
+  }
+ 
+  .cntn{
+      background-image: url("https://montroseinc.com/wp-content/uploads/2021/04/shutterstock_1076198576.jpg");
+  }
