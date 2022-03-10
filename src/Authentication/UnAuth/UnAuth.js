@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UnAuth.css'
 import Footer from '../../Component/Footer/Footer';
+import { Button } from 'react-bootstrap'
 
 const UnAuth = () => {
     const navigate=useNavigate()
@@ -11,9 +12,9 @@ const UnAuth = () => {
     }
   return (
       <>
-<div>
-    <p>You're not Authorised Customer</p>
-    <button type='submit' onClick={LoginPage}>Click for Login</button>
+<div className='unauth'>
+    <p className='txtunauth'>You're not Authorised Customer</p>
+    <Button type='submit' onClick={LoginPage}>Click for Login</Button>
 </div>
 <Footer/>
 </>
