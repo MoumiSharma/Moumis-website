@@ -10,15 +10,15 @@ const Header=()=> {
 
   const loggingOut=()=>{
     window.localStorage.clear()
-    navigate('/Login_page')
+    navigate('/login_page')
   }
 
-  let location=useLocation()
+  let location=useLocation();
   useEffect(()=>{
     console.log("Location: ",location,"\nPathName: ",location.pathname);
-  },[location])
+  },[location]);
 
-  const token=window.localStorage.getItem('TokenValue')
+  // const isAuth=window.localStorage.getItem('TokenValue')
   return (
     <div>
            <Navbar bg="dark" variant="dark" expand="lg" className='nav'>
@@ -27,24 +27,20 @@ const Header=()=> {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-      <Nav.Link as={Link} to={"/home_page"}>Home</Nav.Link>
+      <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
        <NavDropdown title="My work" id="basic-nav-dropdown">
           <NavDropdown.Item as={Link} to={"/photo_page"}>Photos</NavDropdown.Item>
           <NavDropdown.Item as={Link} to={"/video_page"}>Videos</NavDropdown.Item>
         </NavDropdown>
         <Nav.Link as={Link} to={"/about_page"}>About Me</Nav.Link>
-        <Nav.Link as={Link} to={"/contact_page"}>Contact</Nav.Link>
-       {
-         token ?
-       
-        
-        <button onClick={loggingOut} className="Logout">Log out</button>
-        :
+        <Nav.Link as={Link} to={"/contact_page"}>Contact Me</Nav.Link>
+       {/* {
+        isAuth? */}
+
         <Nav.Link as={Link} to={"/login_page"}>Log in</Nav.Link>
+        <button onClick={loggingOut} >Log out</button> 
         
-       
-        
-       }
+      
       </Nav>
     </Navbar.Collapse>
   </Container>

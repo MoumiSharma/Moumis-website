@@ -2,14 +2,23 @@
     color: blue;
 }
 .line{
-    word-spacing: 5px;
-}
-.img{
     
-     width: 100px;
-     height: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
 }
+
 .btn4{
    padding-left: 100px;
    margin-top: 50px;
+}
+.bgndhome{
+    background-image: url("https://instepdancewear.co.uk/wp-content/uploads/2015/10/bigstock-couple-dancing-contemporary-ov-60551471.jpg");
+   margin-left: 30px;
+    height: 700px;
+    margin-right: 30px;
+}
+.btnhome{
+   margin-top: 300px !important;
+    margin-right: 700px;
+   
 }

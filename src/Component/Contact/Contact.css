@@ -58,11 +58,13 @@
     background-color: transparent;
     color: beige;
 }
-.line{
-   letter-spacing: 0%;
-    
-}
+
 .H{
     letter-spacing: 20px;
     color: white;
+}
+
+.X{
+    color: white;
+    
 }

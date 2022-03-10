@@ -2,9 +2,9 @@ import React from 'react';
 import {useFormik} from 'formik';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import Footer from '../../Component/Footer/Footer';
+import Footer from '../../Footer/Footer'
 import { Container,Row,Col,Button } from 'react-bootstrap'
-import './Registration.css'
+import './BookForm.css'
 
 const ValidateForm=(formValue)=> {
     const errors={};
@@ -22,25 +22,22 @@ const ValidateForm=(formValue)=> {
         errors.email="Invalid email"
     }
 
-    if(!formValue.password){
-        errors.password="Please Enter password";
-    } else if(formValue.password.length<6){
-        errors.password="min length 6"
-    }
-
+  
     console.log("Error: ",errors);
     return errors;
 }
 
- const Registration = () => {
+ const BookForm = () => {
 
     const navigate=useNavigate()
 
      const formik=useFormik({
          initialValues:{
              username:'',
+             address:'',
+             contactno:'',
              email:'',
-             password:''
+             date:''
          },
          validate:ValidateForm,
          onSubmit:(values)=>{
@@ -48,7 +45,7 @@ const ValidateForm=(formValue)=> {
              axios.post('https://jsonplaceholder.typicode.com/users',values)
              .then(res=>{
                  console.log("Axios Resdponse: ",res);
-                 navigate('/login_page')
+                 navigate('/booking_page')
              })
              .catch(err=>{
                  console.log("Axios error: ",err)
@@ -63,7 +60,7 @@ const ValidateForm=(formValue)=> {
     <Col sm={6}></Col>
     <Col sm={6}>
         <div className='login'>
-        <h5 className='font1'>User Signup</h5>
+        <h5 className='font1'>User Details:</h5>
           <form onSubmit={formik.handleSubmit}>
               <br />
               <br />
@@ -83,6 +80,36 @@ const ValidateForm=(formValue)=> {
               <br />
              
               <input
+              type="text"
+              name="address"
+              placeholder="Enter your address"
+              value={formik.values.address}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className='mail'/>
+              {formik.touched.address && formik.errors.address?
+            (<span style={{color:'red'}}>{formik.errors.address}</span>):null}
+              
+
+              <br />
+              <br />
+             
+              <input
+              type="text"
+              name="contactno"
+              placeholder="Enter your phone no"
+              value={formik.values.contactno}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className='mail'/>
+              {formik.touched.contactno && formik.errors.contactno?
+            (<span style={{color:'red'}}>{formik.errors.contactno}</span>):null}
+              
+
+              <br />
+              <br />
+             
+              <input
               type="email"
               name="email"
               placeholder="Enter email"
@@ -93,24 +120,22 @@ const ValidateForm=(formValue)=> {
               {formik.touched.email && formik.errors.email?
             (<span style={{color:'red'}}>{formik.errors.email}</span>):null}
               
-
-              
               <br />
               <br />
               
               <input
-              type="text"
-              name="password"
-              placeholder="Enter password"
-              value={formik.values.password}
+              type="date"
+              name="date"
+              placeholder="pick a date"
+              value={formik.values.date}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className='password'/>
-              {formik.touched.password && formik.errors.password?
-            (<span style={{color:'red'}}>{formik.errors.password}</span>):null}
+              {formik.touched.date && formik.errors.date?
+            (<span style={{color:'red'}}>{formik.errors.date}</span>):null}
 
             <br/>
-            <Button type='submit' className='btn' disabled={!(formik.isValid && formik.dirty)}>Sign Up</Button>
+            <Button type='submit' className='btn' disabled={!(formik.isValid && formik.dirty)}>Submit</Button>
           </form>
       </div>
       </Col>
@@ -120,4 +145,4 @@ const ValidateForm=(formValue)=> {
 <Footer/>
 </div>
   )}
-export default Registration
+export default BookForm

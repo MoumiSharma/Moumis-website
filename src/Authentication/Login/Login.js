@@ -1,7 +1,7 @@
 import React from 'react';
 import {useFormik} from 'formik';
 import axios from 'axios'
-import { Container,Row,Col } from 'react-bootstrap'
+import { Container,Row,Col,Button } from 'react-bootstrap'
 import Footer from '../../Component/Footer/Footer'
 import './Login.css'
 import { useNavigate } from 'react-router-dom';
@@ -41,7 +41,7 @@ const ValidateForm=(formValue)=> {
          validate:ValidateForm,
          onSubmit:(values)=>{
              console.log("Received values: ",values);
-             axios.post('https://node-project-storage.herokuapp.com/postUserData',values)
+             axios.post('https://jsonplaceholder.typicode.com/users',values)
              .then(res=>{
                  console.log("Axious Response: ",res.data);
                  window.localStorage.setItem("Token value: ",res.data.token)
@@ -93,9 +93,9 @@ const ValidateForm=(formValue)=> {
             (<span style={{color:'red'}}>{formik.errors.password}</span>):null}
             <br/>
             <br/>
-              <button type='submit' className='btn'>Log in</button>
+              <Button type='submit' className='btn'>Log in</Button>
              <p>
-                 <a href="#">Forgot password? </a> or <a href="/register_page">Sign Up</a> </p>
+                 <a href="/forgot_page">Forgot password? </a> or <a href="/register_page">Sign Up</a> </p>
           </form>
       </div></Col>
   </Row>

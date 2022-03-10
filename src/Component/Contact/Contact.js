@@ -3,6 +3,7 @@ import {useFormik} from 'formik';
 import axios from 'axios'
 import './Contact.css'
 import Footer from '../Footer/Footer';
+import { Button } from 'react-bootstrap'
 
 
 
@@ -42,9 +43,11 @@ const Contact = () => {
          validate:ValidateForm,
          onSubmit:(values)=>{
              console.log("Received values: ",values);
-             axios.post('https://project-node-1.herokuapp.com/postUserData',values)
+             axios.post('https://jsonplaceholder.typicode.com/users',values)
              .then(res=>{
                  console.log("Axios Resdponse: ",res);
+                 window.localStorage.setItem("Token value: ",res.data.token)
+                 alert("Thank You.")
                  
              })
              .catch(err=>{
@@ -114,7 +117,7 @@ return(
 
             <br/>
             <br/>
-              <button type='submit' className='submit' disabled={!(formik.isValid && formik.dirty) }>Send</button>
+              <Button type='submit' className='submit' disabled={!(formik.isValid && formik.dirty) }>Send</Button>
           </form>
       </div>
     </div>
@@ -135,9 +138,9 @@ return(
       <div>
       <h6 className='G'><i class="fa fa-envelope" aria-hidden="true"></i>moumisharma91@gmail.com</h6>
       </div>
-      <div>
-        <p className='line'>-----------------------------------------------</p>
-      </div>
+      
+        <h4 className='X'>---------------------------------------------</h4>
+      
       <div className='H'><i class="fa fa-facebook" aria-hidden="true"></i><i class="fa fa-linkedin" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-google-plus" aria-hidden="true"></i></div>
       
       </div>

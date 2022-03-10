@@ -8,7 +8,8 @@ export default function Videos() {
   return (
     <>
    
-      <div>
+     <br/>
+     <div className='vid'>
         <br/>
       <h3>Music Videos :</h3>
       <br/>
@@ -76,9 +77,11 @@ export default function Videos() {
 </CardGroup>
 
 <br/>
+<div className='vid'>
 <br/>
 <h3>Advertisement :</h3>
 <br/>
+</div>
 <CardGroup className='group'>
       <Card>
     <ReactPlayer
@@ -110,9 +113,11 @@ export default function Videos() {
 
 
 <br/>
+<div className='vid'>
 <br/>
 <h3>Making Videos :</h3>
 <br/>
+</div>
 <CardGroup className='group'>
       <Card>
     <ReactPlayer
